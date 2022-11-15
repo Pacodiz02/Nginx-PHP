@@ -44,6 +44,7 @@
   with_items:
     - "{{virtualhosts}}"
 
+# Modificación de la receta para desactivar www.pagina2.org
 - name: Deshabiltando pagina2  
   file:
     path: /etc/nginx/sites-enabled/{{item["name"]}}.conf
