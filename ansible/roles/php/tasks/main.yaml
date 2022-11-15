@@ -1,0 +1,14 @@
+- name: Instalando php7.4 y php7.4-fpm
+  apt:
+    pkg: php7.4
+    pkg: php7.4-fpm
+
+- name: Creación de info.php
+  copy:
+    src: info.php
+    dest: /{{item["datos"]["documentroot"]}}/info.php
+    owner: www-data
+    group: www-data
+    mode: 0644
+  with_items:
+    - "{{virtualhosts}}"
